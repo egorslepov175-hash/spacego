@@ -1,0 +1,4 @@
+.taste-skill/inspect/
+.taste-skill/browser-tmp/
+node_modules/
+*.log
