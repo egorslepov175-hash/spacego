@@ -1,0 +1,7 @@
+{
+  "name": "spacego-lock-api",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test test/*.test.mjs", "build": "node scripts/build.mjs", "preview": "node scripts/preview.mjs" },
+  "engines": { "node": ">=22.13" }
+}

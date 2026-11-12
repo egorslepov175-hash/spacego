@@ -23,8 +23,14 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
       - name: Check bookings and QR access
-        run: node --test test/domain.test.mjs test/access.test.mjs
+        run: node --test test/domain.test.mjs test/access.test.mjs test/smart-locks.test.mjs
+      - name: Check server authorization and signed command protocol
+        run: node --test lock-backend/test/api.test.mjs lock-backend/test/protocol.test.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
